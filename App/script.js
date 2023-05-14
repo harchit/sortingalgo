@@ -72,7 +72,7 @@ async function SelectionSort() {
 		let curr_id = bars[i].split('id="')[1].split('"')[0];
 		document.getElementById(curr_id).style.backgroundColor = selected;
 		let sound = MapRange(document.getElementById(curr_id).style.height.split('%')[0], 2, 100, 500, 1000);
-		beep(100, sound, delay)
+		
 		for (let j = i + 1; j < bars.length; j++) {
 			let nxt_ele = bars[j].split('id="')[1].split('"')[0];
 			document.getElementById(nxt_ele).style.backgroundColor = chng;
@@ -120,7 +120,7 @@ async function BubbleSort() {
 
 			document.getElementById(curr_id).style.backgroundColor = selected;
 			let sound = MapRange(document.getElementById(curr_id).style.height.split('%')[0], 2, 100, 500, 1000);
-			beep(100, sound, delay)
+			
 			document.getElementById(nxt_ele).style.backgroundColor = chng;
 			await Sleep(delay / 2);
 			let a = parseInt(bars[j].split(/[:%]/)[1]);
@@ -163,7 +163,7 @@ async function InsertionSort() {
 		let nxt_ele = bars[j].split('id="')[1].split('"')[0];
 		document.getElementById(curr_id).style.backgroundColor = selected;
 		let sound = MapRange(document.getElementById(curr_id).style.height.split('%')[0], 2, 100, 500, 1000);
-		beep(100, sound, delay)
+		
 		while (j >= 0 && parseInt(bars[j].split(/[:%]/)[1]) > parseInt(key.split(/[:%]/)[1])) {
 			document.getElementById(nxt_ele).style.backgroundColor = def;
 			nxt_ele = bars[j].split('id="')[1].split('"')[0];
@@ -221,12 +221,12 @@ async function merge(l, m, r, d) {
 		document.getElementById(curr_id).style.backgroundColor = selected;
 		document.getElementById(nxt_ele).style.backgroundColor = chng;
 		let sound = MapRange(document.getElementById(curr_id).style.height.split('%')[0], 2, 100, 500, 1000);
-		beep(100, sound, d)
+	
 		await Sleep(d / 2.0);
 		document.getElementById(curr_id).style.backgroundColor = def;
 		document.getElementById(nxt_ele).style.backgroundColor = def;
 		sound = MapRange(document.getElementById(curr_id).style.height.split('%')[0], 2, 100, 500, 1000);
-		beep(100, sound, d)
+
 	}
 }
 
@@ -278,7 +278,7 @@ async function Partition(l, r, d) {
 			document.getElementById(nxt_ele).style.backgroundColor = chng;
 			document.getElementById(id).style.backgroundColor = selected;
 			let sound = MapRange(document.getElementById(curr_id).style.height.split('%')[0], 2, 100, 500, 1000);
-			beep(100, sound, d)
+		
 			await Sleep(d / 3.0)
 			document.getElementById(curr_id).style.backgroundColor = def;
 			document.getElementById(nxt_ele).style.backgroundColor = def;
@@ -346,7 +346,7 @@ async function Heapfiy(n, i, d) {
 		container.innerHTML = bars.join(' ');
 		document.getElementById(curr_id).style.backgroundColor = selected;
 		let sound = MapRange(document.getElementById(curr_id).style.height.split('%')[0], 2, 100, 500, 1000);
-		beep(100, sound, d)
+		
 		if (r < n) document.getElementById(id3).style.backgroundColor = chng;
 		if (l < n) document.getElementById(nxt_ele).style.backgroundColor = chng;
 		await Sleep(d / 3.0)
